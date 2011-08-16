@@ -16,11 +16,6 @@ Provides: ruby-irb
 Provides: ruby-rdoc
 Provides: ruby-libs
 Provides: ruby-devel
-Obsoletes: ruby
-Obsoletes: ruby-libs
-Obsoletes: ruby-irb
-Obsoletes: ruby-rdoc
-Obsoletes: ruby-devel
 
 %description
 Ruby is the interpreted scripting language for quick and easy
@@ -39,8 +34,10 @@ export CFLAGS="$RPM_OPT_FLAGS -Wall -fno-strict-aliasing"
   --disable-rpath \
   --without-X11 \
   --without-tk \
-  --includedir=%{_includedir}/ruby \
-  --libdir=%{_libdir}
+  --includedir=/opt/ruby-1.9.2 \
+  --libdir=/opt/ruby-1.9.2/lib \
+  --bindir=/opt/ruby-1.9.2/bin \
+  --sbindir=/opt/ruby-1.9.2/sbin
 
 make %{?_smp_mflags}
 
