@@ -1,9 +1,9 @@
-%define rubyver         1.9.2
-%define rubyminorver    p180
+define rubyver         1.9.2
+%define rubyminorver    p290
 
 Name:           ruby
 Version:        %{rubyver}%{rubyminorver}
-Release:        2%{?dist}
+Release:        1%{?dist}
 License:        Ruby License/GPL - see COPYING
 URL:            http://www.ruby-lang.org/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -53,16 +53,5 @@ rm -rf $RPM_BUILD_ROOT
 /opt/ruby-1.9.2
 
 %changelog
-* Sat Jun 25 2011 Ian Meyer <ianmmeyer@gmail.com> - 1.9.2-p180-2
-- Remove non-existant --sitearchdir and --vedorarchdir from %configure
-- Replace --sitedir --vendordir with simpler --libdir
-- Change %{_prefix}/share to %{_datadir}
-
-* Tue Mar 7 2011 Robert Duncan <robert@robduncan.co.uk> - 1.9.2-p180-1
-- Update prerequisites to include make
-- Update ruby version to 1.9.2-p180
-- Install /usr/share documentation
-- (Hopefully!?) platform agnostic
-
-* Sun Jan 2 2011 Ian Meyer <ianmmeyer@gmail.com> - 1.9.2-p136-1
-- Initial spec to replace system ruby with 1.9.2-p136
+* Wednesday Aug 17 2011 Brian Butler <brian@tumblr.com> - 1.9.2-p290-1
+- Created initial spec for ruby 1.9.2-p290
