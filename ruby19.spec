@@ -1,5 +1,9 @@
-define rubyver         1.9.2
+%define rubyver         1.9.2
 %define rubyminorver    p290
+%define _prefix		/opt/ruby-1.9.2
+%define _localstatedir	/opt/ruby-1.9.2/var
+%define _mandir		/opt/ruby-1.9.2/man
+%define _infodir	/opt/ruby-1.9.2/share/info
 
 Name:           ruby
 Version:        %{rubyver}%{rubyminorver}
@@ -31,27 +35,25 @@ export CFLAGS="$RPM_OPT_FLAGS -Wall -fno-strict-aliasing"
 
 %configure \
   --enable-shared \
-  --disable-rpath \
-  --without-X11 \
-  --without-tk \
-  --prefix=/opt/ruby-1.9.2
+  --disable-rpath
 
-make %{?_smp_mflags}
+make RUBY_INSTALL_NAME=ruby %{?_smp_mflags}
 
 %install
+#cleanup before install
+rm -rf $RPM_BUILD_ROOT/usr/src
+
 # installing binaries ...
 make install DESTDIR=$RPM_BUILD_ROOT
-
-#we don't want to keep the src directory
-rm -rf $RPM_BUILD_ROOT/usr/src
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-, root, root)
-/opt/ruby-1.9.2
+%doc README COPYING ChangeLog LEGAL ToDo
+%{_prefix}/*
 
 %changelog
-* Wednesday Aug 17 2011 Brian Butler <brian@tumblr.com> - 1.9.2-p290-1
+* Wed Aug 17 2011 Brian Butler <brian@tumblr.com> - 1.9.2-p290-1
 - Created initial spec for ruby 1.9.2-p290
