@@ -34,8 +34,7 @@ export CFLAGS="$RPM_OPT_FLAGS -Wall -fno-strict-aliasing"
   --disable-rpath \
   --without-X11 \
   --without-tk \
-  --includedir=/opt/ruby-1.9.2 \
-  --prefix=/opt/ruby-1.9.2
+  --prefix=/opt/ruby-1.9.2-p180
 
 make %{?_smp_mflags}
 
