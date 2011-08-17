@@ -35,9 +35,7 @@ export CFLAGS="$RPM_OPT_FLAGS -Wall -fno-strict-aliasing"
   --without-X11 \
   --without-tk \
   --includedir=/opt/ruby-1.9.2 \
-  --libdir=/opt/ruby-1.9.2/lib \
-  --bindir=/opt/ruby-1.9.2/bin \
-  --sbindir=/opt/ruby-1.9.2/sbin
+  --prefix=/opt/ruby-1.9.2
 
 make %{?_smp_mflags}
 
