@@ -21,12 +21,6 @@ This spec is an attempt to push for a stable replacement of Ruby 1.8.x with 1.9.
 
 + Builds
 + Installs
-+ Overwrites/upgrades your currently installed ruby package (**DANGEROUS**)
-
-### What it does **not** do
-
-+ Split packages into ruby-libs, ruby-devel, etc (looking for help here)
-+ Install alongside Ruby 1.8.x
 
 ### Distro support
 
@@ -37,7 +31,3 @@ Tested working (as sane as I could test for) on:
 * RHEL 6.1 x86_64
 * RHEL 6.1 i686
 * CentOS 5.6 x86_64
-
-### Personal thoughts
-
-This is by no means, correct, or sane. Nor does it follow any sort of policy for packaging. I leave that to the people who are most familiar with such things, and will willingly accept patches that add those features.
