@@ -34,8 +34,6 @@ straight-forward, and extensible.
 export CFLAGS="$RPM_OPT_FLAGS -Wall -fno-strict-aliasing"
 
 ./configure \
-  --enable-shared \
-  --disable-rpath \
   --prefix=%{_prefix}
 
 make RUBY_INSTALL_NAME=ruby %{?_smp_mflags}
