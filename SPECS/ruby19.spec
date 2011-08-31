@@ -5,7 +5,7 @@
 %define _mandir		/opt/ruby-1.9.2/man
 %define _infodir	/opt/ruby-1.9.2/share/info
 
-Name:           ruby
+Name:           ruby-%{rubyver}
 Version:        %{rubyver}%{rubyminorver}
 Release:        1%{?dist}
 License:        Ruby License/GPL - see COPYING
