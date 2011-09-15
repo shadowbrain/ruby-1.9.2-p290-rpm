@@ -45,6 +45,9 @@ rm -rf $RPM_BUILD_ROOT/usr/src
 # installing binaries ...
 make install DESTDIR=$RPM_BUILD_ROOT
 
+# update rubygems
+$RPM_BUILD_ROOT/%{_prefix}/bin/gem update --system
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
